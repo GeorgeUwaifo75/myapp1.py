@@ -20,6 +20,11 @@ hobbies = st.multiselect("Hobbies: ", ['Dancing', 'Reading', 'Sports'])
 # write the selected options 
 st.write("You selected", len(hobbies), 'hobbies')
 
+name = st.text_input("Enter Your name", "Type Here ...")
+if(st.button('Submit')): 
+   result = name.title() 
+   st.success(result)
+
 # Create a simple button that does nothing 
 st.button("Click me for now") 
 # Create a button, that when clicked, shows a text 
