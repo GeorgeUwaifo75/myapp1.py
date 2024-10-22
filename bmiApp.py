@@ -1,5 +1,5 @@
 import streamlit as st
-
+#bmi=weight/height2
 st.title("BMI Calculation Master")
 weight = st.number_input("Enter your weight (in kgs)")
 status = st.radio('Select your height format: ', ('cms', 'meters', 'feet'))
@@ -19,3 +19,9 @@ else: # take height input in feet
 # 1 meter = 3.28 
   try: bmi = weight / (((height/3.28))**2) 
   except: st.text("Enter some value of height") 
+
+# check if the button is pressed or no
+if(st.button('Calculate BMI')): 
+  # print the BMI INDEX 
+  st.text("Your BMI Index is {}.".format(bmi))
+  
