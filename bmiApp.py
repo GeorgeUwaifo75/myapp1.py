@@ -4,6 +4,7 @@ st.title("BMI Calculation Master")
 weight = st.number_input("Enter your weight (in kgs)")
 status = st.radio('Select your height format: ', ('cms', 'meters', 'feet'))
 
+bmi =0
 if(status == 'cms'): 
 # take height input in centimeters 
   height = st.number_input('Centimeters') 
