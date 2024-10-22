@@ -9,3 +9,6 @@ st.warning("Warning")
 st.error("Error") 
 exp = ZeroDivisionError("Trying to divide by Zero")
 st.exception(exp)
+
+st.write("Text with write") 
+st.write(range(10))
