@@ -20,3 +20,8 @@ hobbies = st.multiselect("Hobbies: ", ['Dancing', 'Reading', 'Sports'])
 # write the selected options 
 st.write("You selected", len(hobbies), 'hobbies')
 
+# Create a simple button that does nothing 
+st.button("Click me for now") 
+# Create a button, that when clicked, shows a text 
+if(st.button("About")): 
+   st.text("Welcome To GiTeksol Hub!!!")
