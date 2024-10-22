@@ -15,3 +15,8 @@ hobby = st.selectbox("Hobbies: ", ['Dancing', 'Reading', 'Sports'])
 # print the selected hobby 
 st.write("Your hobby is: ", hobby)
 
+# multi select box # first argument takes the box title # second argument takes the options to show 
+hobbies = st.multiselect("Hobbies: ", ['Dancing', 'Reading', 'Sports']) 
+# write the selected options 
+st.write("You selected", len(hobbies), 'hobbies')
+
