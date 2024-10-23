@@ -39,7 +39,7 @@ if(st.button("Submit")):
           counter+=1 
      if quest4 == "1": 
           counter+=1 
-perct = ((counter/4) * 100)     
-st.write("Thanks for participating. You got ", counter, " of 4 correctly, which is ",perct, "%")
+     perct = ((counter/4) * 100)     
+     st.write("Thanks for participating. You got ", counter, " of 4 correctly, which is ",perct, "%")
 
 
