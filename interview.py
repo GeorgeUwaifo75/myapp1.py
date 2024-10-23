@@ -4,13 +4,29 @@ import time
 
 st.set_page_config()
 
-ph = st.empty()
-N = 1*60
-for secs in range(N,0,-1):
-    mm, ss = secs//60, secs%60
-    ph.metric("Countdown", f"{mm:02d}:{ss:02d}")
-    time.sleep(1)
+#ph = st.empty()
+#N = 1*60
+#for secs in range(N,0,-1):
+#    mm, ss = secs//60, secs%60
+#    ph.metric("Countdown", f"{mm:02d}:{ss:02d}")
+#    time.sleep(1)
 
+def sync_code():
+    while True:
+        print("e")
+
+async def start_timer(secs):
+    await asyncio.sleep(secs)
+    await async_func()
+
+async def main():
+    asyncio.create_task(start_timer(1))
+    loop = asyncio.get_event_loop()
+    # use run_in_executor to run sync code in a separate thread
+    # while this thread runs the event loop
+    await loop.run_in_executor(None, sync_code)
+
+asyncio.run(main())
 
 st.title("Interview Session")
 st.text("This is a set of questions for this interview session")
