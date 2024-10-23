@@ -1,5 +1,16 @@
 import streamlit as st
 
+import time
+
+st.set_page_config()
+
+ph = st.empty()
+N = 5*60
+for secs in range(N,0,-1):
+    mm, ss = secs//60, secs%60
+    ph.metric("Countdown", f"{mm:02d}:{ss:02d}")
+    time.sleep(1)
+
 st.title("Interview Session")
 st.text("This is a set of questions for this interview session")
 fname = st.text_input("What is your first name?", "Enter name")
@@ -44,6 +55,6 @@ if(st.button("Submit")):
      if q4 == 1: 
           counter+=1 
      perct = ((counter/4) * 100)     
-     st.write("Thanks for participating. You got ", counter, " of 4 correctly, which is ",perct, "%")
+     st.write("Thanks ",lname," ",fname " for participating. You got ", counter, " of 4 correctly, which is ",perct, "%")
 
 
