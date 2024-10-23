@@ -25,19 +25,20 @@ quest1 = st.selectbox("How many states in Nigeria? ", ['30', '25', '36', '46', '
 q1 = int(quest1)
 quest2 = st.selectbox("How many planets in our solar system? ", ['5', '9', '7', '8', 'Others']) 
 q2 = int(quest2)
-quest3 = st.number_input("What year did Nigeria gain independence?")
+quest3 = st.text_input("What year did Nigeria gain independence?")
 q3 = int(quest3)
-quest4 = st.text_input("What is  12 + 5 - 2 (3+5) ?", "0")
+quest4 = st.text_input("What is  12 + 5 - 2 (3+5) ?")
+q4 = int(quest4)
 
 counter=0
 if(st.button("Submit")): 
-     if quest1 == q1:
+     if q1 == 36:
           counter+=1
-     if quest2 == q2: 
+     if q2 == 8: 
           counter+=1
-     if quest3 == q3: 
+     if q3 == 1960: 
           counter+=1 
-     if quest4 == "1": 
+     if q4 == 1: 
           counter+=1 
      perct = ((counter/4) * 100)     
      st.write("Thanks for participating. You got ", counter, " of 4 correctly, which is ",perct, "%")
