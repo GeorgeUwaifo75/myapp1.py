@@ -25,7 +25,7 @@ hobby = st.selectbox("Education: ", ['Secondary', 'Tertiery Bsc', 'Tertiery MSc'
 st.markdown("### Quick Qizz Session")
 quest1 = st.selectbox("How many states in Nigeria? ", ['30', '25', '36', '46', 'Others']) 
 quest2 = st.selectbox("How many planets in our solar system? ", ['5', '9', '7', '8', 'Others']) 
-quest3 = st.number_input("What year did Nigeria gain independence?", "19xx")
+quest3 = st.number_input("What year did Nigeria gain independence?")
 quest4 = st.text_input("What is  12 + 5 - 2 (3+5) ?", "0")
 
 counter=0
