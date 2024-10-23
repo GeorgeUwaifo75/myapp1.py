@@ -55,6 +55,6 @@ if(st.button("Submit")):
      if q4 == 1: 
           counter+=1 
      perct = ((counter/4) * 100)     
-     st.write("Thanks ",lname," ",fname " for participating. You got ", counter, " of 4 correctly, which is ",perct, "%")
+     st.write("Thanks ",lname," ",fname, " for participating. You got ", counter, " of 4 correctly, which is ",perct, "%")
 
 
