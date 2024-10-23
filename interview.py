@@ -26,10 +26,13 @@ q1 = int(quest1)
 quest2 = st.selectbox("How many planets in our solar system? ", ['5', '9', '7', '8', 'Others']) 
 q2 = int(quest2)
 quest3 = st.text_input("What year did Nigeria gain independence?","")
-q3 = int(quest3)
-quest4 = st.text_input("What is  12 + 5 - 2 (3+5) ?","")
-q4 = int(quest4)
 
+try: q3 = int(quest3)
+except:  st.text("Enter a valid year!!!")     
+
+quest4 = st.text_input("What is  12 + 5 - 2 (3+5) ?","")
+try: q4 = int(quest4)
+except:  st.text("Enter a valid number!!!") 
 counter=0
 if(st.button("Submit")): 
      if q1 == 36:
