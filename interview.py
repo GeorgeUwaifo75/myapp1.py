@@ -2,9 +2,9 @@ import streamlit as st
 
 st.title("Interview Session")
 st.text("This is a set of questions for this interview session")
-fname = st.text_input("What is your first name?", "Enter name")
+fname = st.text_input("What is your first name?", "")
 
-lname = st.text_input("What is your last name?", "Enter name")
+lname = st.text_input("What is your last name?", "")
 
 status = st.radio("Select Gender: ", ('Male', 'Female')) 
 
