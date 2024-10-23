@@ -1,8 +1,8 @@
 import streamlit as st
 
 import time
-
-st.set_page_config()
+import asyncio
+#st.set_page_config()
 
 #ph = st.empty()
 #N = 1*60
