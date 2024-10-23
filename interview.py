@@ -36,6 +36,6 @@ if(st.button("Submit")):
           counter+=1 
      elif quest4 == "1": 
           counter+=1        
-     st.text("Thanks for participating. You got ", counter, " of 4 correctly.")
+     st.write("Thanks for participating. You got ", counter, " of 4 correctly.")
 
 
