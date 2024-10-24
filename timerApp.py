@@ -18,7 +18,7 @@ def form_body():
     
 def main():
    # st.title("Pomodoro")
-   # time_minutes = st.number_input('Enter the time in minutes ', min_value=1, value=25)
+   time_minutes = st.number_input('Enter the time in minutes ', min_value=1, value=25)
    form_body()
    time_in_seconds = time_minutes * 60
    count_down(int(120))
