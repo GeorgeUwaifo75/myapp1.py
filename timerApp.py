@@ -9,13 +9,13 @@ def count_down(ts):
             st.header(f"{time_now}")
             time.sleep(1)
             ts -= 1
-st.write("Time Up!")
+        st.write("Time Up!")
             
 def main():
     st.title("Pomodoro")
     time_minutes = st.number_input('Enter the time in minutes ', min_value=1, value=25)
     time_in_seconds = time_minutes * 60
-    count_down(int(20))
+    count_down(int(120))
    # if st.button("START"):
    #      count_down(int(time_in_seconds))
 if __name__ == '__main__':
