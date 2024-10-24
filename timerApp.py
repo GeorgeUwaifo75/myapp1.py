@@ -8,7 +8,8 @@ def count_down(ts):
             time_now = '{:02d}:{:02d}'.format(mins, secs)
             st.header(f"{time_now}")
             time.sleep(1)
-            ts -= 1st.write("Time Up!")
+            ts -= 1
+st.write("Time Up!")
             
 def main():
     st.title("Pomodoro")
