@@ -22,9 +22,9 @@ def main():
    fname = st.text_input('Enter first name ', '')
    lname = st.text_input('Enter last name ', '')
    time_in_seconds = time_minutes * 60
-   #count_down(int(120))
-    if st.button("START"):
+   count_down(int(30))
+    #if st.button("START"):
         # count_down(int(time_in_seconds))
-        count_down(int(60))
+       
 if __name__ == '__main__':
     main()
