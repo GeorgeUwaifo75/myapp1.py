@@ -15,8 +15,7 @@ def main():
     time_minutes = st.number_input('Enter the time in minutes ', min_value=1, value=25)
     time_in_seconds = time_minutes * 60
 
-if st.button("START"):
-        count_down(int(60))
-#       count_down(int(time_in_seconds))
+    if st.button("START"):
+         count_down(int(time_in_seconds))
 if __name__ == '__main__':
     main()
