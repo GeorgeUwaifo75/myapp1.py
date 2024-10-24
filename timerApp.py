@@ -15,14 +15,14 @@ def count_down(ts):
     
 def main():
    st.title("Pomodoro")
-   count_down(int(120))
+  
    time_minutes = st.number_input('Enter the time in minutes ', min_value=1, value=25)
    
    fname = st.text_input('Enter first name ', '')
    lname = st.text_input('Enter last name ', '')
    time_in_seconds = time_minutes * 60
    
-   #count_down(int(120))
+   count_down(int(120))
    # if st.button("START"):
    #      count_down(int(time_in_seconds))
 if __name__ == '__main__':
