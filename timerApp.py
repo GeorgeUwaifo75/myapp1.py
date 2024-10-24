@@ -10,6 +10,7 @@ def count_down(ts):
             time.sleep(1)
             ts -= 1
         st.write("Time Up!")
+        st.empty()
 
 
     
