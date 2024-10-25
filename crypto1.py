@@ -1,19 +1,9 @@
 import streamlit as st
-
-
-st.header("My crypto hub")
-import pandas as pd
-#import matplotlib.pyplot as plt
-from scipy import stats
+import matplotlib.pyplot as plt
 import numpy as np
-from sklearn import linear_model
 
-dataFile = 'DOGE.csv'
-df = pd.read_csv(dataFile)
+arr = np.random.normal(1, 1, size=100)
+fig, ax = plt.subplots()
+ax.hist(arr, bins=20)
 
-# Remove missing values
-df.dropna(inplace=True)
-
-print(df.info())
-print(df.describe())
-print(df.head(5))
+st.pyplot(fig)
