@@ -66,7 +66,7 @@ df2 = newdf.sort_values('date', ascending=True)
 
 
 #chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
-st.line_chart( pd.DataFrame(df2['date'], df2['high']) )
+st.line_chart( df2['date'], df2['high'] )
 
 z = np.percentile(df2['high'], 25)
 
