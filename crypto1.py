@@ -6,7 +6,7 @@ import numpy as np
 from sklearn import linear_model
 
 st.header("Crypto Analytics Buddy")
-n = int(input("Enter 1-Doge, 2-Shib, 3-LTC,4-SOL, 5-XMR : "))
+n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC,4-SOL, 5-XMR : "))
 
 # dataFile = 'DOGE.csv'
 if n==1:
