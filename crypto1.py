@@ -46,3 +46,22 @@ try:
    price_val = float(st.number_input("Start price : "))
 except:
     price_val = 0.001
+
+#filter rows on the basis of date 
+newdf = (df['date'] > begin_val) & (df['date'] <= end_val)  & (df['open'] >= price_val)
+
+#locate rows and access them using .loc() function 
+newdf = df.loc[newdf] 
+
+#print dataframe 
+st.write(newdf) 
+
+
+df2 = newdf.sort_values('date', ascending=True)
+plt.plot(df2['date'], df2['high'])
+#plt.plot(df2['Date'], df2['Volume DOGE'])
+plt.xticks(rotation='vertical')
+
+z = np.percentile(df2['high'], 25)
+
+st.write(z) 
