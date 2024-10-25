@@ -68,7 +68,7 @@ x= df2['date']
 y = df2['high']
 
 
-the_chart = pd.DataFrame([x,y], columns=["a", "b"])
+the_chart = pd.DataFrame(['x','y'], columns=["a", "b"])
 #chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 st.line_chart( the_chart )
 
