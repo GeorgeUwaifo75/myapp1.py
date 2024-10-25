@@ -20,4 +20,4 @@ elif n==3:
 elif n==4:   
     dataFile = 'DOGE.csv'
 elif n==5:   
-    dataFile = 'Binance_XMRUSDT_1h.csv'    
+    dataFile = 'DOGE.csv'    
