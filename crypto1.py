@@ -34,15 +34,15 @@ st.write(df.info())
 #convert date column into date format 
 df['date'] = pd.to_datetime(df['date']) 
 
-begin_val = st.text_input("Begin date : ")
+begin_val = st.text_input("Begin date : ",'2010-07-17')
 if begin_val == "":
     begin_val = '2010-07-17'
-end_val = st.text_input("End date : ")
+end_val = st.text_input("End date : ",'2024-10-24')
 if end_val == "":
     end_val = '2024-10-24'
 
 price_val =0
 try:
-   price_val = float(st.text_input("Start price : "))
+   price_val = float(st.number_input("Start price : "))
 except:
     price_val = 0.001
