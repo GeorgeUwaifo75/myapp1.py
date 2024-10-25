@@ -58,12 +58,15 @@ st.write(newdf)
 
 
 df2 = newdf.sort_values('date', ascending=True)
-plt.plot(df2['date'], df2['high'])
-
-st.line_chart(df2['date'], df2['high'])
 
 
-plt.xticks(rotation='vertical')
+#plt.plot(df2['date'], df2['high'])
+#st.line_chart(df2['date'], df2['high'])
+#plt.xticks(rotation='vertical')
+
+
+#chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
+st.line_chart(df2)
 
 z = np.percentile(df2['high'], 25)
 
