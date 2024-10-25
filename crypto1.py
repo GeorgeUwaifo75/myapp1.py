@@ -23,6 +23,7 @@ elif n==4:
 elif n==5:   
     dataFile = 'DOGE.csv'    
 
+df = pd.read_csv(dataFile)
 # Remove missing values
 df.dropna(inplace=True)
 
