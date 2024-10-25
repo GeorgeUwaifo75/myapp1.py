@@ -59,7 +59,10 @@ st.write(newdf)
 
 df2 = newdf.sort_values('date', ascending=True)
 plt.plot(df2['date'], df2['high'])
-#plt.plot(df2['Date'], df2['Volume DOGE'])
+
+st.line_chart(df2['date'], df2['high'])
+
+
 plt.xticks(rotation='vertical')
 
 z = np.percentile(df2['high'], 25)
