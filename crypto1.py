@@ -47,37 +47,39 @@ try:
 except:
     price_val = 0.001
 
-#filter rows on the basis of date 
-newdf = (df['date'] > begin_val) & (df['date'] <= end_val)  & (df['open'] >= price_val)
+def genVisual():
+    #filter rows on the basis of date 
+    newdf = (df['date'] > begin_val) & (df['date'] <= end_val)  & (df['open'] >= price_val)
 
-#locate rows and access them using .loc() function 
-newdf = df.loc[newdf] 
+    #locate rows and access them using .loc() function 
+    newdf = df.loc[newdf] 
 
-#print dataframe 
-st.write(newdf) 
+    #print dataframe 
+    st.write(newdf) 
 
+    df2 = newdf.sort_values('date', ascending=True)
 
-title = st.text_input('Title', 'Line Plot')
-x_label = st.text_input('X-axis Label', 'X-axis')
-y_label = st.text_input('Y-axis Label', 'Y-axis')
-color = st.color_picker('Line Color', '#1f77b4')
+    column = st.selectbox('Select a column', df2.columns)
+    title = st.text_input('Title', 'Line Plot')
+    x_label = st.text_input('X-axis Label', 'X-axis')
+    y_label = st.text_input('Y-axis Label', 'Y-axis')
+    color = st.color_picker('Line Color', '#1f77b4')
 
-df2 = newdf.sort_values('date', ascending=True)
-#plt.plot(df2['date'], df2['high'])
-#plt.xticks(rotation='vertical')
+    fig, ax = plt.subplots()
+    ax.plot(df2['date'], df2['high'], color=color)
+    ax.set_title(title)
+    ax.set_xlabel(x_label)
+    ax.set_ylabel(y_label)
 
-fig, ax = plt.subplots()
-ax.plot(df2['date'], df2['high'], color=color)
-ax.set_title(title)
-ax.set_xlabel(x_label)
-ax.set_ylabel(y_label)
+    # Rotate X-axis labels
+    plt.xticks(rotation=45)
 
-# Rotate X-axis labels
-plt.xticks(rotation=45)
-
-st.pyplot(fig)
+    st.pyplot(fig)
 
 
-z = np.percentile(df2['high'], 25)
+    z = np.percentile(df2['high'], 25)
 
-st.write(z) 
+    st.write("25% or less registers the high of ",z) 
+
+if(st.button("Generate Visual"):
+     genVisual()
