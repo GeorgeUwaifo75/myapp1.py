@@ -15,13 +15,13 @@ except:
 if n==1:
     dataFile = 'DOGE.csv'
 elif n==2:   
-    dataFile = 'DOGE.csv'
+    dataFile = 'SHIB.csv'
 elif n==3:   
-    dataFile = 'DOGE.csv'
+    dataFile = 'LTC.csv'
 elif n==4:   
-    dataFile = 'DOGE.csv'
+    dataFile = 'SOL.csv'
 elif n==5:   
-    dataFile = 'DOGE.csv'    
+    dataFile = 'XMR.csv'    
 
 df = pd.read_csv(dataFile)
 # Remove missing values
