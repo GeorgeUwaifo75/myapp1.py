@@ -8,7 +8,7 @@ from sklearn import linear_model
 st.header("Crypto Analytics Buddy")
 n=1
 try:
-    n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR : "))
+    n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR, 6-BTC, 7-ETH : "))
 except:
     st.write("Enter correct value.")
 
@@ -22,6 +22,10 @@ elif n==4:
     dataFile = 'SOL.csv'
 elif n==5:   
     dataFile = 'XMR.csv'    
+elif n==6:   
+    dataFile = 'BTC.csv'
+elif n==7:   
+    dataFile = 'ETH.csv'    
 
 df = pd.read_csv(dataFile)
 # Remove missing values
