@@ -81,5 +81,5 @@ def genVisual():
 
     st.write("25% or less registers the high of ",z) 
 
-if(st.button("Generate Visual"):
+if st.button("Generate Visual"):
      genVisual()
