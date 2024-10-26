@@ -57,11 +57,26 @@ newdf = df.loc[newdf]
 st.write(newdf) 
 
 
-df2 = newdf.sort_values('date', ascending=True)
-plt.plot(df2['date'], df2['high'])
-plt.xticks(rotation='vertical')
+title = st.text_input('Title', 'Line Plot')
+x_label = st.text_input('X-axis Label', 'X-axis')
+y_label = st.text_input('Y-axis Label', 'Y-axis')
+color = st.color_picker('Line Color', '#1f77b4')
 
-st.pyplot(plt.gcf())
+#df2 = newdf.sort_values('date', ascending=True)
+#plt.plot(df2['date'], df2['high'])
+#plt.xticks(rotation='vertical')
+
+fig, ax = plt.subplots()
+ax.plot(df2.index, df2[column], color=color)
+x.set_title(title)
+ax.set_xlabel(x_label)
+ax.set_ylabel(y_label)
+
+# Rotate X-axis labels
+plt.xticks(rotation=45)
+
+st.pyplot(fig)
+
 
 z = np.percentile(df2['high'], 25)
 
