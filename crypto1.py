@@ -67,7 +67,7 @@ df2 = newdf.sort_values('date', ascending=True)
 #plt.xticks(rotation='vertical')
 
 fig, ax = plt.subplots()
-ax.plot(df2.index, df2[column], color=color)
+ax.plot(df2['date'], df2['high'], color=color)
 x.set_title(title)
 ax.set_xlabel(x_label)
 ax.set_ylabel(y_label)
