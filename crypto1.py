@@ -62,7 +62,7 @@ x_label = st.text_input('X-axis Label', 'X-axis')
 y_label = st.text_input('Y-axis Label', 'Y-axis')
 color = st.color_picker('Line Color', '#1f77b4')
 
-#df2 = newdf.sort_values('date', ascending=True)
+df2 = newdf.sort_values('date', ascending=True)
 #plt.plot(df2['date'], df2['high'])
 #plt.xticks(rotation='vertical')
 
