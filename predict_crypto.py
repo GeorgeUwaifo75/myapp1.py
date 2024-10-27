@@ -50,18 +50,16 @@ if st.button("Start"):
     try:
         op_val = float(st.number_input("Open Value : "))
     except:
-        #op_val = float(0.059)
-        st.text("Enter a valid value")
-
+        op_val = float(0.059)
+  
     try:
         vol_val = st.number_input("Volume Value : ")
     except:
-        #vol_val = int(1000)  
-        st.text("Enter a valid value")
-   
-    
-if st.button("Predict Value"):
-    doPhase2(op_val,vol_val)
+        vol_val = int(1000)  
+      
+    if op_val & vol_val:
+        if st.button("Predict Value"):
+            doPhase2(op_val,vol_val)
 
 
 #def doMain():
