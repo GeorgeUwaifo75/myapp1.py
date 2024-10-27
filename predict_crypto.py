@@ -66,14 +66,6 @@ elif n==5:
 
 if st.button("Start"):
     doPhase1(dataFile)
-    try:
-       op_val = float(st.number_input("Open Value : "))
-    except:
-        op_val = 0.059
-    try:
-       vol_val = int(st.number_input("Volume Value : "))
-    except:
-       vol_val = 1000  
     
     if st.button("Predict Value"):
        doPhase2(op_val,vol_val)
