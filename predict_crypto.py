@@ -5,9 +5,36 @@ from scipy import stats
 import numpy as np
 from sklearn import linear_model
 
+def doPhase1():
+    df = pd.read_csv(dataFile)
+
+    # Remove missing values
+    df.dropna(inplace=True)
+
+    #print(df.info())
+    #print(df.describe())
+    print(df.head(5))
+    X = df[['Open', 'Volume USDT']]
+    y = df['High']
+    #y = df['Low']
+
+    regr = linear_model.LinearRegression()
+    regr.fit(X, y)
+    #print(regr.coef_) 
+
+    print(df.describe())
+    op_val = float(st.text_input("Open Value : "))
+    vol_val = int(st.text_input("Volume Value : "))
+    if st.button("Predict Value"):
+        doPhase2()
+
+def doPhase2():
+    predictedHigh = regr.predict([[op_val, vol_val]])
+    st.write("The highest pedicted value:",predictedHigh) 
+
 
 st.header("My Predict Buddy")
-n=1
+n=0
 try:
     n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR: "))
 except:
@@ -24,14 +51,10 @@ elif n==4:
 elif n==5:   
     dataFile = 'Binance_XMRUSDT_1h.csv'    
 
-df = pd.read_csv(dataFile)
+if n > 0:
+    if st.button("Start"):
+        doPhase1()
 
-# Remove missing values
-df.dropna(inplace=True)
-
-#print(df.info())
-#print(df.describe())
-print(df.head(5))
 
 #----Doge
 #Get the relationship between the x & y(High) variables
@@ -43,19 +66,5 @@ print(df.head(5))
 #y= df['Volume USDT'] #R:  0.46920371020546875
 #y= df['tradecount'] #R:  0.500517120518652
 
-X = df[['Open', 'Volume USDT']]
-y = df['High']
-#y = df['Low']
 
-regr = linear_model.LinearRegression()
-regr.fit(X, y)
-#print(regr.coef_) 
 
-print(df.describe())
-
-op_val = float(input("Open Value : "))
-vol_val = int(input("Volume Value : "))
-
-predictedHigh = regr.predict([[op_val, vol_val]])
-
-print("The highest pedicted value:",predictedHigh) 
