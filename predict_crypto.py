@@ -36,23 +36,23 @@ regr = linear_model.LinearRegression()
 regr.fit(X, y)
 #print(regr.coef_) 
 
-        if st.button("Start"):
-            st.write(df.describe())
+if st.button("Start"):
+   st.write(df.describe())
    
-            try:
-                op_val = float(st.number_input("Open Value : "))
-            except:
-                op_val = float(0.059)
+    try:
+        op_val = float(st.number_input("Open Value : "))
+    except:
+        op_val = float(0.059)
   
-            try:
-                vol_val = st.number_input("Volume Value : ")
-            except:
-                vol_val = int(1000)  
+    try:
+        vol_val = st.number_input("Volume Value : ")
+    except:
+        vol_val = int(1000)  
       
-                if op_val>0 & vol_val>0:
-                    st.button("Predict Value")
-                    predictedHigh = regr.predict([[v1, v2]])
-                    st.write("The highest pedicted value:",predictedHigh) 
+    if op_val>0 & vol_val>0:
+            if st.button("Predict Value"):
+                predictedHigh = regr.predict([[v1, v2]])
+                st.write("The highest pedicted value:",predictedHigh) 
     #doPhase2(op_val,vol_val)
 
 #def doPhase2(v1,v2):
