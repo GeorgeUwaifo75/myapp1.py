@@ -76,7 +76,8 @@ if st.button("Start"):
        vol_val = 1000  
     
     if st.button("Predict Value"):
-        doPhase2(op_val,vol_val)
+        pass
+       # doPhase2(op_val,vol_val)
 #doMain()
 #----Doge
 #Get the relationship between the x & y(High) variables
