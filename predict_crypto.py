@@ -34,14 +34,12 @@ def doPhase1():
         op_val = 1
 
     try:
-       vol_val = int(st.number_input("Open Value : "))
+       vol_val = int(st.number_input("Volume Value : "))
     except:
         vol_val = 1000  
     
     # vol_val = int(st.text_input("Volume Value : "))
-    if st.button("Predict Value"):
-        doPhase2()
-
+    
 
 st.header("My Predict Buddy")
 n=0
@@ -64,6 +62,9 @@ elif n==5:
 if n > 0:
     if st.button("Start"):
         doPhase1()
+
+if st.button("Predict Value"):
+        doPhase2()
 
 
 #----Doge
