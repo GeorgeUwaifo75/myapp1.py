@@ -7,8 +7,11 @@ from sklearn import linear_model
 
 
 st.header("My Predict Buddy")
-
-n = int(input("Enter 1-Doge, 2-Shib, 3-LTC,4-SOL, 5-XMR : "))
+n=1
+try:
+    n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR: "))
+except:
+    st.write("Enter correct value.")
 
 if n==1:
     dataFile = 'Binance_DOGEUSDT_1h.csv'
@@ -26,7 +29,7 @@ df = pd.read_csv(dataFile)
 # Remove missing values
 df.dropna(inplace=True)
 
-print(df.info())
+#print(df.info())
 #print(df.describe())
 print(df.head(5))
 
@@ -46,7 +49,6 @@ y = df['High']
 
 regr = linear_model.LinearRegression()
 regr.fit(X, y)
-
 #print(regr.coef_) 
 
 print(df.describe())
