@@ -9,8 +9,8 @@ def doPhase2(v1,v2):
     predictedHigh = regr.predict([[v1, v2]])
     st.write("The highest pedicted value:",predictedHigh) 
 
-def doPhase1():
-    df = pd.read_csv(dataFile)
+def doPhase1(dfile):
+    df = pd.read_csv(dfile)
 
     # Remove missing values
     df.dropna(inplace=True)
@@ -65,7 +65,7 @@ elif n==5:
     dataFile = 'Binance_XMRUSDT_1h.csv'    
 
 if st.button("Start"):
-    doPhase1()
+    doPhase1(dataFile)
     try:
        op_val = float(st.number_input("Open Value : "))
     except:
@@ -76,8 +76,7 @@ if st.button("Start"):
        vol_val = 1000  
     
     if st.button("Predict Value"):
-        pass
-       # doPhase2(op_val,vol_val)
+       doPhase2(op_val,vol_val)
 #doMain()
 #----Doge
 #Get the relationship between the x & y(High) variables
