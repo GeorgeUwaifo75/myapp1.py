@@ -5,7 +5,7 @@ from scipy import stats
 import numpy as np
 from sklearn import linear_model
 
-def doPhase2():
+def doPhase2(v1,v2):
     predictedHigh = regr.predict([[op_val, vol_val]])
     st.write("The highest pedicted value:",predictedHigh) 
 
@@ -36,10 +36,12 @@ def doPhase1():
     try:
        vol_val = int(st.number_input("Volume Value : "))
     except:
-        vol_val = 1000  
+       vol_val = 1000  
     
     # vol_val = int(st.text_input("Volume Value : "))
-    
+    if st.button("Predict Value"):
+        doPhase2(op_val,vol_val)
+
 
 st.header("My Predict Buddy")
 n=0
@@ -62,10 +64,6 @@ elif n==5:
 if n > 0:
     if st.button("Start"):
         doPhase1()
-
-if st.button("Predict Value"):
-        doPhase2()
-
 
 #----Doge
 #Get the relationship between the x & y(High) variables
