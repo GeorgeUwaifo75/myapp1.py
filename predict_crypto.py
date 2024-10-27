@@ -10,7 +10,9 @@ def doPhase2(v1,v2):
     predictedHigh = regr.predict([[v1, v2]])
     st.write("The highest pedicted value:",predictedHigh) 
 
-st.header("My Predict Buddy***")
+
+st.header("My Predict Buddy*")
+
 n=0
 try:
     n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR: "))
@@ -35,6 +37,7 @@ df.dropna(inplace=True)
 
 #print(df.info())
 #print(df.describe())
+
 st.write(df.head(5))
 X = df[['Open', 'Volume USDT']]
 y = df['High']
@@ -44,7 +47,6 @@ regr.fit(X, y)
 #print(regr.coef_) 
 
 if st.button("Start"):
-    
     st.write(df.describe())
    
     try:
@@ -57,9 +59,9 @@ if st.button("Start"):
     except:
         vol_val = int(1000)  
       
-    if op_val & vol_val:
-        if st.button("Predict Value"):
-            doPhase2(op_val,vol_val)
+if op_val & vol_val:
+    st.button("Predict Value")
+    doPhase2(op_val,vol_val)
 
 
 #def doMain():
