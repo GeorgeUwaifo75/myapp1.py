@@ -5,6 +5,29 @@ from scipy import stats
 import numpy as np
 from sklearn import linear_model
 
+def doMain():
+    st.header("My Predict Buddy")
+    n=0
+    try:
+        n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR: "))
+    except:
+        st.write("Enter correct value.")
+
+    if n==1:
+        dataFile = 'Binance_DOGEUSDT_1h.csv'
+    elif n==2:   
+        dataFile = 'Binance_SHIBUSDT_1h.csv'
+    elif n==3:   
+        dataFile = 'Binance_LTCUSDT_1h.csv'
+    elif n==4:   
+        dataFile = 'Binance_SOLUSDT_1h.csv'
+    elif n==5:   
+        dataFile = 'Binance_XMRUSDT_1h.csv'    
+
+    if n > 0:
+        if st.button("Start"):
+            doPhase1()
+
 def doPhase2(v1,v2):
     predictedHigh = regr.predict([[v1, v2]])
     st.write("The highest pedicted value:",predictedHigh) 
@@ -39,32 +62,12 @@ def doPhase1():
        vol_val = 1000  
     
     # vol_val = int(st.text_input("Volume Value : "))
-    if vol_val > 1000:
-        if st.button("Predict Value"):
-            doPhase2(op_val,vol_val)
+    
+    #if vol_val > 1000:
+    if st.button("Predict Value"):
+        doPhase2(op_val,vol_val)
 
-st.header("My Predict Buddy")
-n=0
-try:
-    n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR: "))
-except:
-    st.write("Enter correct value.")
-
-if n==1:
-    dataFile = 'Binance_DOGEUSDT_1h.csv'
-elif n==2:   
-    dataFile = 'Binance_SHIBUSDT_1h.csv'
-elif n==3:   
-    dataFile = 'Binance_LTCUSDT_1h.csv'
-elif n==4:   
-    dataFile = 'Binance_SOLUSDT_1h.csv'
-elif n==5:   
-    dataFile = 'Binance_XMRUSDT_1h.csv'    
-
-if n > 0:
-    if st.button("Start"):
-        doPhase1()
-
+doMain()
 #----Doge
 #Get the relationship between the x & y(High) variables
 #x= df['Open'] #R: 0.999738450769844
