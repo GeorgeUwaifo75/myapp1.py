@@ -50,14 +50,16 @@ def doPhase1(dfile):
     st.write(df.describe())
    
     try:
-       op_val = float(st.number_input("Open Value : ","0.059"))
+       op_val = float(st.number_input("Open Value : "))
     except:
-        op_val = float(0.059)
+        #op_val = float(0.059)
+        st.text("Enter a valid value")
 
     try:
-       vol_val = int(st.number_input("Volume Value : ","1000"))
+       vol_val = int(st.number_input("Volume Value : "))
     except:
-       vol_val = int(1000)  
+       #vol_val = int(1000)  
+        st.text("Enter a valid value")
    
     
     if st.button("Predict Value"):
