@@ -43,69 +43,28 @@ regr = linear_model.LinearRegression()
 regr.fit(X, y)
 #print(regr.coef_) 
 
-st.write(df.describe())
+if st.button("Start"):
+    
+    st.write(df.describe())
    
-try:
-    op_val = float(st.number_input("Open Value : "))
-except:
-    #op_val = float(0.059)
-    st.text("Enter a valid value")
+    try:
+        op_val = float(st.number_input("Open Value : "))
+    except:
+        #op_val = float(0.059)
+        st.text("Enter a valid value")
 
-try:
-    vol_val = st.number_input("Volume Value : ")
-except:
-    #vol_val = int(1000)  
-    st.text("Enter a valid value")
+    try:
+        vol_val = st.number_input("Volume Value : ")
+    except:
+        #vol_val = int(1000)  
+        st.text("Enter a valid value")
    
     
 if st.button("Predict Value"):
     doPhase2(op_val,vol_val)
 
 
-
-
-
-def doPhase1(dfile):
-    df = pd.read_csv(dfile)
-
-    # Remove missing values
-    df.dropna(inplace=True)
-
-    #print(df.info())
-    #print(df.describe())
-    st.write(df.head(5))
-    X = df[['Open', 'Volume USDT']]
-    y = df['High']
-    #y = df['Low']
-
-    regr = linear_model.LinearRegression()
-    regr.fit(X, y)
-    #print(regr.coef_) 
-
-    st.write(df.describe())
-   
-    try:
-       op_val = float(st.number_input("Open Value : "))
-    except:
-        #op_val = float(0.059)
-        st.text("Enter a valid value")
-
-    try:
-       vol_val = st.number_input("Volume Value : ")
-    except:
-       #vol_val = int(1000)  
-        st.text("Enter a valid value")
-   
-    
-    if st.button("Predict Value"):
-        doPhase2(op_val,vol_val)
-
-
 #def doMain():
-if st.button("Start"):
-    doPhase1(dataFile)
-
-    
  
 #doMain()
 #----Doge
