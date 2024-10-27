@@ -6,7 +6,7 @@ import numpy as np
 from sklearn import linear_model
 
 def doPhase2(v1,v2):
-    predictedHigh = regr.predict([[op_val, vol_val]])
+    predictedHigh = regr.predict([[v1, v2]])
     st.write("The highest pedicted value:",predictedHigh) 
 
 def doPhase1():
@@ -35,13 +35,14 @@ def doPhase1():
 
     try:
        vol_val = int(st.number_input("Volume Value : "))
+       if st.button("Predict Value"):
+            doPhase2(op_val,vol_val)
+
     except:
        vol_val = 1000  
     
     # vol_val = int(st.text_input("Volume Value : "))
-    if st.button("Predict Value"):
-        doPhase2(op_val,vol_val)
-
+   
 
 st.header("My Predict Buddy")
 n=0
