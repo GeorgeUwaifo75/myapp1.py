@@ -45,30 +45,29 @@ def doPhase1():
         doPhase2(op_val,vol_val)
 
 
-def doMain():
-    st.header("My Predict Buddy")
-    n=0
-    try:
-        n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR: "))
-    except:
-        st.write("Enter correct value.")
+#def doMain():
+st.header("My Predict Buddy")
+n=0
+try:
+    n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR: "))
+except:
+    st.write("Enter correct value.")
 
-    if n==1:
-        dataFile = 'Binance_DOGEUSDT_1h.csv'
-    elif n==2:   
-        dataFile = 'Binance_SHIBUSDT_1h.csv'
-    elif n==3:   
-        dataFile = 'Binance_LTCUSDT_1h.csv'
-    elif n==4:   
-        dataFile = 'Binance_SOLUSDT_1h.csv'
-    elif n==5:   
-        dataFile = 'Binance_XMRUSDT_1h.csv'    
+if n==1:
+    dataFile = 'Binance_DOGEUSDT_1h.csv'
+elif n==2:   
+    dataFile = 'Binance_SHIBUSDT_1h.csv'
+elif n==3:   
+    dataFile = 'Binance_LTCUSDT_1h.csv'
+elif n==4:   
+    dataFile = 'Binance_SOLUSDT_1h.csv'
+elif n==5:   
+    dataFile = 'Binance_XMRUSDT_1h.csv'    
 
-    if n > 0:
-        if st.button("Start"):
-            doPhase1()
+if st.button("Start"):
+    doPhase1()
 
-doMain()
+#doMain()
 #----Doge
 #Get the relationship between the x & y(High) variables
 #x= df['Open'] #R: 0.999738450769844
