@@ -5,6 +5,11 @@ from scipy import stats
 import numpy as np
 from sklearn import linear_model
 
+
+def doPhase2(v1,v2):
+    predictedHigh = regr.predict([[v1, v2]])
+    st.write("The highest pedicted value:",predictedHigh) 
+
 st.header("My Predict Buddy***")
 n=0
 try:
@@ -23,12 +28,42 @@ elif n==4:
 elif n==5:   
     dataFile = 'Binance_XMRUSDT_1h.csv'    
 
+df = pd.read_csv(dataFile)
+
+# Remove missing values
+df.dropna(inplace=True)
+
+#print(df.info())
+#print(df.describe())
+st.write(df.head(5))
+X = df[['Open', 'Volume USDT']]
+y = df['High']
+
+regr = linear_model.LinearRegression()
+regr.fit(X, y)
+#print(regr.coef_) 
+
+st.write(df.describe())
+   
+try:
+    op_val = float(st.number_input("Open Value : "))
+except:
+    #op_val = float(0.059)
+    st.text("Enter a valid value")
+
+try:
+    vol_val = st.number_input("Volume Value : ")
+except:
+    #vol_val = int(1000)  
+    st.text("Enter a valid value")
+   
+    
+if st.button("Predict Value"):
+    doPhase2(op_val,vol_val)
 
 
 
-def doPhase2(v1,v2):
-    predictedHigh = regr.predict([[v1, v2]])
-    st.write("The highest pedicted value:",predictedHigh) 
+
 
 def doPhase1(dfile):
     df = pd.read_csv(dfile)
