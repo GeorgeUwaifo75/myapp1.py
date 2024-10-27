@@ -14,6 +14,7 @@ def doPhase2(v1,v2):
 st.header("My Predict Buddy*")
 
 n=0
+dataFile=""
 try:
     n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR: "))
 except:
