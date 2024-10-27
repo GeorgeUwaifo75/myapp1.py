@@ -56,7 +56,7 @@ def doPhase1(dfile):
         st.text("Enter a valid value")
 
     try:
-       vol_val = int(st.number_input("Volume Value : "))
+       vol_val = st.number_input("Volume Value : ")
     except:
        #vol_val = int(1000)  
         st.text("Enter a valid value")
