@@ -5,6 +5,10 @@ from scipy import stats
 import numpy as np
 from sklearn import linear_model
 
+def doPhase2():
+    predictedHigh = regr.predict([[op_val, vol_val]])
+    st.write("The highest pedicted value:",predictedHigh) 
+
 def doPhase1():
     df = pd.read_csv(dataFile)
 
@@ -27,10 +31,6 @@ def doPhase1():
     vol_val = int(st.text_input("Volume Value : "))
     if st.button("Predict Value"):
         doPhase2()
-
-def doPhase2():
-    predictedHigh = regr.predict([[op_val, vol_val]])
-    st.write("The highest pedicted value:",predictedHigh) 
 
 
 st.header("My Predict Buddy")
