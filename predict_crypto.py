@@ -28,21 +28,21 @@ def doPhase1():
 
     st.write(df.describe())
 
-    try:
-       op_val = float(st.number_input("Open Value : "))
-    except:
-        op_val = 0.059
+    #try:
+     #  op_val = float(st.number_input("Open Value : "))
+    #except:
+     #   op_val = 0.059
 
-    try:
-       vol_val = int(st.number_input("Volume Value : "))
-    except:
-       vol_val = 1000  
+    #try:
+     #  vol_val = int(st.number_input("Volume Value : "))
+    #except:
+     #  vol_val = 1000  
     
     # vol_val = int(st.text_input("Volume Value : "))
     
     #if vol_val > 1000:
-    if st.button("Predict Value"):
-        doPhase2(op_val,vol_val)
+    #if st.button("Predict Value"):
+     #   doPhase2(op_val,vol_val)
 
 
 #def doMain():
@@ -66,7 +66,17 @@ elif n==5:
 
 if st.button("Start"):
     doPhase1()
-
+    try:
+       op_val = float(st.number_input("Open Value : "))
+    except:
+        op_val = 0.059
+    try:
+       vol_val = int(st.number_input("Volume Value : "))
+    except:
+       vol_val = 1000  
+    
+    if st.button("Predict Value"):
+        doPhase2(op_val,vol_val)
 #doMain()
 #----Doge
 #Get the relationship between the x & y(High) variables
