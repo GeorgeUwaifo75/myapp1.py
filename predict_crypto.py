@@ -37,7 +37,7 @@ regr.fit(X, y)
 #print(regr.coef_) 
 
 if st.button("Start"):
-   st.write(df.describe())
+    st.write(df.describe())
    
     try:
         op_val = float(st.number_input("Open Value : "))
