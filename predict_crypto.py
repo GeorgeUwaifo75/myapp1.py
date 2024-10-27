@@ -21,10 +21,11 @@ try:
         dataFile = 'Binance_SOLUSDT_1h.csv'
     elif n==5:   
         dataFile = 'Binance_XMRUSDT_1h.csv'    
+    df = pd.read_csv(dataFile)
 except:
     st.write("Enter correct value.")
 
-df = pd.read_csv(dataFile)
+
 
 # Remove missing values
 df.dropna(inplace=True)
