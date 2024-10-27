@@ -27,8 +27,18 @@ def doPhase1():
     #print(regr.coef_) 
 
     st.write(df.describe())
-    op_val = float(st.text_input("Open Value : "))
-    vol_val = int(st.text_input("Volume Value : "))
+
+    try:
+       op_val = float(st.number_input("Open Value : "))
+    except:
+        op_val = 1
+
+   try:
+       vol_val = int(st.number_input("Open Value : "))
+    except:
+        vol_val = 1000  
+    
+   # vol_val = int(st.text_input("Volume Value : "))
     if st.button("Predict Value"):
         doPhase2()
 
