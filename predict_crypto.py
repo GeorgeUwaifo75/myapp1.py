@@ -5,12 +5,6 @@ from scipy import stats
 import numpy as np
 from sklearn import linear_model
 
-
-def doPhase2(v1,v2):
-    predictedHigh = regr.predict([[v1, v2]])
-    st.write("The highest pedicted value:",predictedHigh) 
-
-
 st.header("My Predict Buddy*")
 
 n=0
@@ -63,6 +57,10 @@ if st.button("Start"):
 if op_val & vol_val:
     st.button("Predict Value")
     doPhase2(op_val,vol_val)
+
+def doPhase2(v1,v2):
+    predictedHigh = regr.predict([[v1, v2]])
+    st.write("The highest pedicted value:",predictedHigh) 
 
 
 #def doMain():
