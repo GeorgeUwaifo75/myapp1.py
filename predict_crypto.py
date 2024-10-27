@@ -5,7 +5,7 @@ from scipy import stats
 import numpy as np
 from sklearn import linear_model
 
-st.header("My Predict Buddy**")
+st.header("My Predict Buddy***")
 n=0
 try:
     n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR: "))
@@ -23,6 +23,9 @@ elif n==4:
 elif n==5:   
     dataFile = 'Binance_XMRUSDT_1h.csv'    
 
+
+if st.button("Start"):
+    doPhase1(dataFile)
 
 def doPhase2(v1,v2):
     predictedHigh = regr.predict([[v1, v2]])
@@ -50,12 +53,12 @@ def doPhase1(dfile):
     try:
        op_val = float(st.number_input("Open Value : "))
     except:
-        op_val = 0.059
+        op_val = float(0.059)
 
     try:
        vol_val = int(st.number_input("Volume Value : "))
     except:
-       vol_val = 1000  
+       vol_val = int(1000)  
    
     
     if st.button("Predict Value"):
@@ -64,8 +67,7 @@ def doPhase1(dfile):
 
 #def doMain():
 
-if st.button("Start"):
-    doPhase1(dataFile)
+
     
  
 #doMain()
