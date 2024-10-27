@@ -24,8 +24,7 @@ elif n==5:
     dataFile = 'Binance_XMRUSDT_1h.csv'    
 
 
-if st.button("Start"):
-    doPhase1(dataFile)
+
 
 def doPhase2(v1,v2):
     predictedHigh = regr.predict([[v1, v2]])
@@ -51,12 +50,12 @@ def doPhase1(dfile):
     st.write(df.describe())
    
     try:
-       op_val = float(st.number_input("Open Value : "))
+       op_val = float(st.number_input("Open Value : ","0.059"))
     except:
         op_val = float(0.059)
 
     try:
-       vol_val = int(st.number_input("Volume Value : "))
+       vol_val = int(st.number_input("Volume Value : ","1000"))
     except:
        vol_val = int(1000)  
    
@@ -66,7 +65,8 @@ def doPhase1(dfile):
 
 
 #def doMain():
-
+if st.button("Start"):
+    doPhase1(dataFile)
 
     
  
