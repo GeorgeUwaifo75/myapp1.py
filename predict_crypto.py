@@ -13,7 +13,7 @@ def doPhase1():
 
     #print(df.info())
     #print(df.describe())
-    print(df.head(5))
+    st.write(df.head(5))
     X = df[['Open', 'Volume USDT']]
     y = df['High']
     #y = df['Low']
@@ -22,7 +22,7 @@ def doPhase1():
     regr.fit(X, y)
     #print(regr.coef_) 
 
-    print(df.describe())
+    st.write(df.describe())
     op_val = float(st.text_input("Open Value : "))
     vol_val = int(st.text_input("Volume Value : "))
     if st.button("Predict Value"):
