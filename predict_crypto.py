@@ -54,13 +54,15 @@ if st.button("Start"):
     except:
         vol_val = int(1000)  
       
-if op_val & vol_val:
+if op_val>0 & vol_val>0:
     st.button("Predict Value")
-    doPhase2(op_val,vol_val)
-
-def doPhase2(v1,v2):
     predictedHigh = regr.predict([[v1, v2]])
     st.write("The highest pedicted value:",predictedHigh) 
+    #doPhase2(op_val,vol_val)
+
+#def doPhase2(v1,v2):
+#    predictedHigh = regr.predict([[v1, v2]])
+#    st.write("The highest pedicted value:",predictedHigh) 
 
 
 #def doMain():
