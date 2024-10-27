@@ -33,12 +33,12 @@ def doPhase1():
     except:
         op_val = 1
 
-   try:
+    try:
        vol_val = int(st.number_input("Open Value : "))
     except:
         vol_val = 1000  
     
-   # vol_val = int(st.text_input("Volume Value : "))
+    # vol_val = int(st.text_input("Volume Value : "))
     if st.button("Predict Value"):
         doPhase2()
 
