@@ -46,7 +46,7 @@ def doPhase1(dfile):
 
 
 #def doMain():
-st.header("My Predict Buddy")
+st.header("My Predict Buddy**")
 n=0
 try:
     n = int(st.text_input("Enter 1-Doge, 2-Shib, 3-LTC, 4-SOL, 5-XMR: "))
